@@ -32,6 +32,7 @@ try {
 		
 
 	// 3. ВЫПОЛНЯЕМ SQL-ЗАПРОС
+		$key	= pg_escape_string($key);
 		$sql	= "SELECT * FROM testable WHERE key='{$key}'";
 		$res	= pg_query($db_conn, $sql);
 		$rows	= pg_fetch_all($res, PGSQL_ASSOC);
